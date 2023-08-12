@@ -1,7 +1,9 @@
-import Navbar from '@/components/Navbar'
+import Navbar from '@/components/server/Navbar'
 import { ReduxProvider } from '@/redux/provider'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { ThemeProvider } from "@/components/client/theme-provider"
+import '../styles/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,10 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <ReduxProvider>
-          {children}
-        </ReduxProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar />
+          <ReduxProvider>
+            {children}
+          </ReduxProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

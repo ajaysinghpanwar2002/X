@@ -3,6 +3,7 @@ import { useState } from "react";
 import { logIn, logOut } from "@/redux/features/auth-slice";
 import { useDispatch } from "react-redux"
 import { AppDispatch } from "@/redux/store";
+import AutoComplete from "@/components/client/AutoComplete";
 
 function Login() {
     const [username, setUsername] = useState("");
@@ -19,6 +20,7 @@ function Login() {
             <input type="text" onChange={(e) => setUsername(e.target.value)} />
             <button onClick={handleLogin}>Login</button>
             <button onClick={handleLogout}>Logout</button>
+            <AutoComplete />
         </div>
     )
 }
