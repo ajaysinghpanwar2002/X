@@ -1,4 +1,4 @@
-import { getUserOne } from "@/db/document";
+import { getUserOne } from "@/db";
 import { NextResponse } from "next/server";
 
 export const GET = async (req: Request, res: NextResponse) => {

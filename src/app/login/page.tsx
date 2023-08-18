@@ -9,6 +9,9 @@ function Login() {
     const [username, setUsername] = useState("");
     const dispatch = useDispatch<AppDispatch>();
 
+    const handleChildSearch = (searchTerm: string) => {
+        setUsername(searchTerm);
+    };
     const handleLogin = () => {
         dispatch(logIn(username));
     }
@@ -17,10 +20,10 @@ function Login() {
     }
     return (
         <div>
-            <input type="text" onChange={(e) => setUsername(e.target.value)} />
+            {username}
             <button onClick={handleLogin}>Login</button>
             <button onClick={handleLogout}>Logout</button>
-            <AutoComplete />
+            <AutoComplete onSearch={handleChildSearch} />
         </div>
     )
 }

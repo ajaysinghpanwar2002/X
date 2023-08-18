@@ -1,8 +1,14 @@
-import { useState, useEffect } from "react";
+'use client'
+
+import React, { useState, useEffect } from "react";
 import Trie from "@/modules/Trie/Trie";
 import axios from "axios";
 
-const AutoComplete: React.FC = () => {
+interface AutoCompleteProps {
+    onSearch: (searchTerm: string) => void;
+}
+
+const AutoComplete: React.FC<AutoCompleteProps> = ({ onSearch }) => {
     const [searchTerm, setSearchTerm] = useState("");
     const [suggestions, setSuggestions] = useState<string[]>([]);
     const autoCompleteTrie = new Trie();
@@ -12,7 +18,6 @@ const AutoComplete: React.FC = () => {
             try {
                 const response = await axios.get("/api/users");
                 const data = await response.data.doc;
-                // Insert each name from the JSON data into the Trie
                 data.forEach((user: { name: string }) => {
                     autoCompleteTrie.insert(user.name);
                 });
@@ -23,11 +28,12 @@ const AutoComplete: React.FC = () => {
 
         fetchData();
     }, []);
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target;
         setSearchTerm(value);
         setSuggestions(autoCompleteTrie.search(value));
-        console.log(suggestions);
+        onSearch(value);
     };
 
     return (

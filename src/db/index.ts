@@ -1,3 +1,3 @@
-import { CreateUser } from "./document";
+import { CreateUser,getUserAll,getUserOne } from "./document";
 
-export { CreateUser };
+export { CreateUser,getUserAll,getUserOne };

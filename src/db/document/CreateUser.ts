@@ -1,16 +1,19 @@
-import {getCollection} from '../collection';
-import { saveDoc,generateId } from '../utils';
+import { getCollection } from '../collection';
+import { saveDoc, generateId } from '../utils';
+import { hashingPassword } from '../utils';
 
-const createUser = (collection:string, data:any)=>{
+const createUser = async(collection: string, data: any) => {
     const table = getCollection(collection);
-    const {name, image} = data;
+    const { name, image, password } = data;
     const id = generateId();
+    const hashedPassword = await hashingPassword(password);
     table[id] = {
-        userId : id,
+        userId: id,
         name,
         image,
+        hashedPassword
     };
-    saveDoc(collection,table);
+    saveDoc(collection, table);
     return table[id];
 }
 
