@@ -1,29 +1,39 @@
 "use client";
 import { useState } from "react";
-import { logIn, logOut } from "@/redux/features/auth-slice";
-import { useDispatch } from "react-redux"
-import { AppDispatch } from "@/redux/store";
-import AutoComplete from "@/components/client/AutoComplete";
+import axios from "axios";
+import AutoComplete from "@/components/AutoComplete";
+import { useRouter  } from 'next/navigation';
 
 function Login() {
     const [username, setUsername] = useState("");
-    const dispatch = useDispatch<AppDispatch>();
-
+    const [password, setPassword] = useState("");
+    const { push } = useRouter();
     const handleChildSearch = (searchTerm: string) => {
         setUsername(searchTerm);
     };
-    const handleLogin = () => {
-        dispatch(logIn(username));
-    }
-    const handleLogout = () => {
-        dispatch(logOut());
-    }
+    const handleLogin = async () => {
+        try {
+            const response = await axios.post("/api/users/login", {
+                name: username,
+                password
+            });
+            console.log("User login successfully!");
+            push('/');
+        } catch (error) {
+            console.error("Error login user:", error);
+        }
+    };
     return (
         <div>
-            {username}
-            <button onClick={handleLogin}>Login</button>
-            <button onClick={handleLogout}>Logout</button>
             <AutoComplete onSearch={handleChildSearch} />
+            {
+                username ? (
+                    <div>
+                        <input type="password" placeholder="enter password" onChange={(e) => setPassword(e.target.value)} />
+                        <button onClick={handleLogin}>login</button>
+                    </div>
+                ) : null
+            }
         </div>
     )
 }

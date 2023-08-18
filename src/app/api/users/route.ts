@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 export const POST = async (req: Request, res: NextResponse) => {
     try {
         const { name, image, password } = await req.json() as UserData;
-        const doc = CreateUser("user", { name, image, password });
+        const doc = await CreateUser("user", { name, image, password });
         return NextResponse.json({ message: "Success", doc }, { status: 201 });
     } catch (err) {
         return NextResponse.json({ message: "Error", err }, { status: 500 });

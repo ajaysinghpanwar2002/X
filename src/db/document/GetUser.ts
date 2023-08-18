@@ -14,4 +14,14 @@ const getUserAll = (collection: string) => {
     return Object.values(table);
 };
 
-export {getUserAll, getUserOne}
+const getUserbyName = async(collection: string, name: string) => {
+    const table = await getCollection(collection);
+    for (const user in table) {
+        if (table[user].name === name) {
+            return table[user].userId;
+        }
+    }
+    return null;
+}
+
+export { getUserAll, getUserOne, getUserbyName }

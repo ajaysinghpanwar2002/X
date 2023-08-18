@@ -1,3 +1,3 @@
 import CreateUser from "./CreateUser";
-import { getUserAll, getUserOne } from "./GetUser";
-export { CreateUser, getUserAll, getUserOne };
+import { getUserAll, getUserOne, getUserbyName } from "./GetUser";
+export { CreateUser, getUserAll, getUserOne, getUserbyName };

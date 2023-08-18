@@ -7,8 +7,6 @@ export default function Room() {
     return (
         <div>
             <h2>Username: {username} </h2>
-            private room
-            public room
         </div>
     )
 }

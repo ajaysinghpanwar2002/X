@@ -2,7 +2,13 @@
   "c15893ac-1e0c-4a4c-b95e-07cd99ba5d52": {
     "userId": "c15893ac-1e0c-4a4c-b95e-07cd99ba5d52",
     "name": "ayush singh",
-    "image": "fwehfvwekfhfwef",
+    "image": "https://th.bing.com/th/id/OIP.behGYaBn4E38em7C6vcOGwHaEK?pid=ImgDet&rs=1",
     "hashedPassword": "$2b$10$68pK5f6hPVChrYZKPZYRFOq128VKdfyON6vu6Pm.YgDTZmrBiZu2u"
+  },
+  "51ea4216-5120-4e8c-aeab-273894df42d1": {
+    "userId": "51ea4216-5120-4e8c-aeab-273894df42d1",
+    "name": "ajay",
+    "image": "32r23r",
+    "hashedPassword": "$2b$10$xWbgBy0g5D3ni5SXBEIrCeHItyF8PVhSSHb0glu5c4it64T5uIp52"
   }
 }
