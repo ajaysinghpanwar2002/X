@@ -2,11 +2,14 @@
 
 import { useState } from "react";
 import axios from "axios";
-import { useRouter  } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 import { logIn } from "@/redux/features/auth-slice";
 import { useDispatch } from "react-redux"
 import { AppDispatch } from "@/redux/store";
+
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 
 export default function SignUp() {
     const [name, setName] = useState("");
@@ -23,22 +26,21 @@ export default function SignUp() {
                 password
             });
             console.log("User created successfully!");
-            localStorage.setItem("userId", response.data.doc.userId);
-            localStorage.setItem("hashedPassword",response.data.doc.hashedPassword);
             dispatch(logIn(name));
-            push('/');
+            push('/room');
         } catch (error) {
             console.error("Error creating user:", error);
         }
     };
 
     return (
-        <div>
-            <input placeholder="enter name" onChange={(e) => setName(e.target.value)} />
-            <input placeholder="enter password" onChange={(e) => setPassword(e.target.value)} />
-            <br />
-            <input placeholder="enter image url" onChange={(e) => setImageUrl(e.target.value)} />
-            <button onClick={handleSubmit}>submit</button>
+        <div className="flex justify-start px-10 mt-5">
+            <div className="w-1/4">
+                <Input placeholder="enter name" onChange={(e) => setName(e.target.value)} />
+                <Input placeholder="enter password" onChange={(e) => setPassword(e.target.value)} />
+                <Input placeholder="enter image url" onChange={(e) => setImageUrl(e.target.value)} />
+                <Button variant="outline" onClick={handleSubmit} className="mt-2">submit</Button>
+            </div>
         </div>
     );
 }

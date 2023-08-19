@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import Trie from "@/modules/Trie/Trie";
 import axios from "axios";
 
+import { Input } from "@/components/ui/input"
+
 interface AutoCompleteProps {
     onSearch: (searchTerm: string) => void;
 }
@@ -38,7 +40,7 @@ const AutoComplete: React.FC<AutoCompleteProps> = ({ onSearch }) => {
 
     return (
         <div>
-            <input
+            <Input
                 type="text"
                 placeholder="Search name..."
                 value={searchTerm}

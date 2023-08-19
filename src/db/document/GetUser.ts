@@ -18,7 +18,7 @@ const getUserbyName = async(collection: string, name: string) => {
     const table = await getCollection(collection);
     for (const user in table) {
         if (table[user].name === name) {
-            return table[user].userId;
+            return table[user].hashedPassword;
         }
     }
     return null;

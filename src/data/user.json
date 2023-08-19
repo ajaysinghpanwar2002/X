@@ -10,5 +10,35 @@
     "name": "ajay",
     "image": "32r23r",
     "hashedPassword": "$2b$10$xWbgBy0g5D3ni5SXBEIrCeHItyF8PVhSSHb0glu5c4it64T5uIp52"
+  },
+  "38833222-96ec-430a-a575-c0d4502dec62": {
+    "userId": "38833222-96ec-430a-a575-c0d4502dec62",
+    "name": "heyajay",
+    "image": "1234",
+    "hashedPassword": "$2b$10$7SmiHbtKgI7Mu6kmQE4i.up1aHResm7fFmLOLbkKuJ9w3V.RZQPbW"
+  },
+  "a9a38642-8709-4a8a-a420-c0390445fba4": {
+    "userId": "a9a38642-8709-4a8a-a420-c0390445fba4",
+    "name": "ayush",
+    "image": "sdfwnefgjw",
+    "hashedPassword": "$2b$10$/TS4cY/BDgWnYssh2fWmTee23U6HcMnin2ebzrs/8z5/V0cquTOCG"
+  },
+  "e1c2f894-f3f9-49d2-90ae-3225e535de31": {
+    "userId": "e1c2f894-f3f9-49d2-90ae-3225e535de31",
+    "name": "hayeww",
+    "image": "fwefwef",
+    "hashedPassword": "$2b$10$z06RBbl6ntH/4.ft7UagTugfOGiWBuINsk5TpewyMlC0hbN3NHEwm"
+  },
+  "0c6db697-753e-45f4-91a8-6bd92b556e02": {
+    "userId": "0c6db697-753e-45f4-91a8-6bd92b556e02",
+    "name": "ajay12",
+    "image": "fjwbfwe",
+    "hashedPassword": "$2b$10$CusX7XE9EP7vXtuuLnZXleHrAs5s0IZVnmsMLaMElYx/M5gQg0Zfm"
+  },
+  "c60741f5-7a87-45d6-860e-a54cb7cd9aa6": {
+    "userId": "c60741f5-7a87-45d6-860e-a54cb7cd9aa6",
+    "name": "",
+    "image": "",
+    "hashedPassword": "$2b$10$ko4kdOkM.Y7EnneBGTtVm.KvUo/SidnrPN0ohgmnM/gjEoPfM1Fg."
   }
 }
