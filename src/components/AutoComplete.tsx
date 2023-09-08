@@ -42,7 +42,7 @@ const AutoComplete: React.FC<AutoCompleteProps> = ({ onSearch }) => {
         <div>
             <Input
                 type="text"
-                placeholder="Search name..."
+                placeholder="Search username..."
                 value={searchTerm}
                 onChange={handleInputChange}
             />

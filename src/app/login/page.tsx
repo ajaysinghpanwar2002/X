@@ -56,7 +56,7 @@ function Login() {
             {
                 username ? (
                     <div>
-                        <Input type="password" placeholder="enter password" onChange={(e) => setPassword(e.target.value)} />
+                        <Input type="password" placeholder="enter password" className="mt-2" onChange={(e) => setPassword(e.target.value)} />
                         <Button variant="outline" onClick={handleLogin} className="mt-2">login</Button>
                     </div>
                 ) : null
